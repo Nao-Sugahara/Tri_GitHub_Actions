@@ -56,13 +56,13 @@ class TestHotelPlanisphere(object):
         dropdown = Select(driver.find_element(By.ID, "contact"))
         dropdown.select_by_value("no")
 
-        ##予約内容を確認するボタンをクリック
+        # 予約内容を確認するボタンをクリック
         driver.find_element(By.ID, "submit-button").click()
 
-        ##スクリーンショット取得（1）
+        # スクリーンショット取得（1）
         driver.save_screenshot(".\\ScreenShot\\01_test_date_check.png")
 
-        ##チェック
+        # チェック
         assert (
             driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
             == "翌日以降の日付を入力してください。"
