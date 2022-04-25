@@ -1,0 +1,32 @@
+name: Lint with Flake8
+# Uses: https://github.com/marketplace/actions/flake8-annotator
+# Ref: https://buildersbox.corp-sansan.com/entry/2021/02/18/110000
+
+on:
+  push:
+    paths:
+    - '*.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+      
+    - name: Install despencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+      
+    - name: Setup flake8 annotations
+      uses: rbialon/flake8-annotations@v1
+      
+    - name: Lint with flake8
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --ignore E402,E722,E302,W503 --max-line-length=100 --statistics
