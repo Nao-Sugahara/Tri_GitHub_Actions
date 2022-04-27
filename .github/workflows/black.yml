@@ -1,4 +1,6 @@
 name: Code formatter with black
+# Uses: https://github.com/marketplace/actions/black-check
+# Ref: https://black.readthedocs.io/en/stable/index.html
 
 on:
   push:
