@@ -69,16 +69,16 @@ class TestHotelPlanisphere(object):
         ), "当日以前の日付を設定することができないこと"
 
         # 名前が空の状態では予約できないこと
-        ##前日を確認する
+        # 前日を確認する
         d_today = datetime.today()
         d_tomorrow = d_today + timedelta(days=+1)
 
-        ##日付を入力する
+        # 日付を入力する
         textbox = driver.find_element(By.ID, "date")
         textbox.clear()
         textbox.send_keys(d_tomorrow.strftime("%Y/%m/%d"))
 
-        ##"宿泊数"に1を入力する
+        # "宿泊数"に1を入力する
         textbox = driver.find_element(By.ID, "term")
         textbox.clear()
         textbox.send_keys("1")
@@ -100,10 +100,10 @@ class TestHotelPlanisphere(object):
         dropdown = Select(driver.find_element(By.ID, "contact"))
         dropdown.select_by_value("no")
 
-        ##予約内容を確認するボタンをクリック
+        # 予約内容を確認するボタンをクリック
         driver.find_element(By.ID, "submit-button").click()
 
-        ##スクリーンショット取得（2）
+        # スクリーンショット取得（2）
         driver.save_screenshot(".\\ScreenShot\\02_noname.png")
 
         # 確認
@@ -113,7 +113,7 @@ class TestHotelPlanisphere(object):
         ), "名前が空欄では予約ができないこと"
 
         # 3か月以上先の日付では予約できないこと
-        ##前日を確認する
+        # 前日を確認する
         d_today = datetime.today()
         d_threemonth = d_today + timedelta(days=+91)
 
@@ -122,7 +122,7 @@ class TestHotelPlanisphere(object):
         textbox.clear()
         textbox.send_keys(d_threemonth.strftime("%Y/%m/%d"))
 
-        ## "宿泊数"に1を入力する
+        # "宿泊数"に1を入力する
         textbox = driver.find_element(By.ID, "term")
         textbox.clear()
         textbox.send_keys("1")
