@@ -78,7 +78,7 @@ class TestHotelPlanisphere(object):
         textbox.clear()
         textbox.send_keys(d_tomorrow.strftime("%Y/%m/%d"))
 
-        ##"宿泊数"に1を入力する
+        # "宿泊数"に1を入力する
         textbox = driver.find_element(By.ID, "term")
         textbox.clear()
         textbox.send_keys("1")
