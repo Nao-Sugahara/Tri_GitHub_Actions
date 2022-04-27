@@ -1,4 +1,4 @@
-name: Code formatter with black
+name: Formatter with black
 # Uses: https://github.com/marketplace/actions/black-check
 # Ref: https://black.readthedocs.io/en/stable/index.html
 
@@ -26,6 +26,6 @@ jobs:
       - name: Setup black_check
         uses: jpetrucciani/black-check@master
 
-      - name: Lint with black
+      - name: Formatter with black
         run: |
           black . --line-length=100 --diff
