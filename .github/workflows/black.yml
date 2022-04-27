@@ -26,4 +26,4 @@ jobs:
 
       - name: Lint with black
         run: |
-          black . --line-length="" --diff
+          black . --line-length=88 --diff
