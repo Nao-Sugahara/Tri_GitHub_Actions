@@ -78,7 +78,7 @@ class TestHotelPlanisphere(object):
         textbox.clear()
         textbox.send_keys(d_tomorrow.strftime("%Y/%m/%d"))
 
-        ##"宿泊数"に1を入力する
+        ## "宿泊数"に1を入力する
         textbox = driver.find_element(By.ID, "term")
         textbox.clear()
         textbox.send_keys("1")
@@ -117,7 +117,7 @@ class TestHotelPlanisphere(object):
         d_today = datetime.today()
         d_threemonth = d_today + timedelta(days=+91)
 
-        ##日付を入力する
+        ## 日付を入力する
         textbox = driver.find_element(By.ID, "date")
         textbox.clear()
         textbox.send_keys(d_threemonth.strftime("%Y/%m/%d"))
