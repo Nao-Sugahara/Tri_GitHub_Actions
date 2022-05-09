@@ -19,12 +19,12 @@ class TestHotelPlanisphere(object):
         driver = self.driver
         driver.get("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
 
-        # 画面の読み込みが終わるまで待機
+        ## 画面の読み込みが終わるまで待機
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.ID, "submit-button"))
         )
 
-        # 当日日付以前を設定すると予約できないこと
+        ## 当日日付以前を設定すると予約できないこと
         # 前日を確認する
         d_today = datetime.today()
         d_yesterday = d_today + timedelta(days=-1)
@@ -113,7 +113,7 @@ class TestHotelPlanisphere(object):
         ), "名前が空欄では予約ができないこと"
 
         # 3か月以上先の日付では予約できないこと
-        ##前日を確認する
+        # 前日を確認する
         d_today = datetime.today()
         d_threemonth = d_today + timedelta(days=+91)
 
