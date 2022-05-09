@@ -4,8 +4,6 @@ name: Lint with Flake8
 
 on:
   pull_request:
-    types: 
-      - opened
     paths:
       - '*.py'
 
