@@ -3,9 +3,11 @@ name: Formatter with black
 # Ref: https://black.readthedocs.io/en/stable/index.html
 
 on:
-  push:
+  pull_request:
+    types:
+      - opened
     paths:
-    - '*.py'
+      - '*.py'
 
 jobs:
   build:
