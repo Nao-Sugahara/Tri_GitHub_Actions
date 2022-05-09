@@ -100,10 +100,10 @@ class TestHotelPlanisphere(object):
         dropdown = Select(driver.find_element(By.ID, "contact"))
         dropdown.select_by_value("no")
 
-        ##予約内容を確認するボタンをクリック
+        # 予約内容を確認するボタンをクリック
         driver.find_element(By.ID, "submit-button").click()
 
-        ##スクリーンショット取得（2）
+        # スクリーンショット取得（2）
         driver.save_screenshot(".\\ScreenShot\\02_noname.png")
 
         # 確認
