@@ -1,31 +1,40 @@
 import pytest
 from selenium import webdriver
-from pages import form, confirm
+
+from pages import confirm, form
 from utilities.read_csv import read_csv_data
 
 
-class TestDataDriven():
+class TestDataDriven:
 
-    datalist = read_csv_data(
-        # "CSVファイルのパス"
-    )
+    datalist = read_csv_data("./drivers/")
     print(datalist)
 
     @classmethod
     def setup_class(cls):
-        # 環境変数PATHの通った場所にchromedriverを置くか、カッコ内でchromedriver.exeのフルパスを指定してください
-        cls.driver = webdriver.Chrome(
-            # "Webdriverのパス"
-        )
+        cls.driver = webdriver.Chrome("./data/reservation.csv")
         cls.driver.maximize_window()
 
     def setup_method(self):
-        self.driver.get(
-            "https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0"
-        )
+        self.driver.get("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
 
-    @pytest.mark.parametrize("case_no, date_from, days, headcount, breakfast, early_checkin, sightseeing, username, contact, total", datalist)
-    def test_reserve_multi(self, case_no, date_from, days, headcount, breakfast, early_checkin, sightseeing, username, contact, total):
+    @pytest.mark.parametrize(
+        "case_no, date_from, days, headcount, breakfast, early_checkin, sightseeing, username, contact, total",
+        datalist,
+    )
+    def test_reserve_multi(
+        self,
+        case_no,
+        date_from,
+        days,
+        headcount,
+        breakfast,
+        early_checkin,
+        sightseeing,
+        username,
+        contact,
+        total,
+    ):
         driver = self.driver
 
         # 待機する
@@ -54,10 +63,7 @@ class TestDataDriven():
         form_page.click_next()
 
         # スクリーンショットを保存
-        driver.save_screenshot(
-            # "スクリーンショットのパス"
-            # 例） ".\\" + case_no + ".png"
-        )
+        driver.save_screenshot()
 
         # 価格が168000円かどうかを確認
         confirm_page = confirm.ConfirmPageObject(self.driver)
