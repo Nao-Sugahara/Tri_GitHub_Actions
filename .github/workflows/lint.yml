@@ -28,5 +28,11 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --ignore E402,E722,E302,W503 --max-line-length=100 --statistics
+        FLAKE8_OUT=$(flake8 . --count --select=E9,F63,F7,F82 --show-source --exit-zero --max-complexity=10 --ignore E402,E722,E302,W503 --max-line-length=100 --statistics)
+        echo "$FLAKE8_OUT"
+        
+        FLAKE8_ERRORS=$(echo "$FLAKE8_OUT" | grep -P '^.+:\d+:\d+:\s*E' || true)
+        if [ -n "$FLAKE8_ERRORS" ]; then
+          echo "::error::!!flake8 errors detected!!"
+          exit 1
+        fi
