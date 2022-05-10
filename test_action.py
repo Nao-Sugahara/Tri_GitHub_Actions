@@ -62,7 +62,7 @@ class TestHotelPlanisphere(object):
         # スクリーンショット取得（1）
         driver.save_screenshot(".\\ScreenShot\\01_test_date_check.png")
 
-        # チェック
+        # 期待値チェック
         assert (
             driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
             == "翌日以降の日付を入力してください。"
