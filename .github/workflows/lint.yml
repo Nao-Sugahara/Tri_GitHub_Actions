@@ -6,8 +6,6 @@ on:
   pull_request:
     paths:
       - '*.py'
-      - '*/*.py'
-      - '*/*/*.py'
 
 jobs:
   build:
