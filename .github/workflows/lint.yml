@@ -24,7 +24,7 @@ jobs:
         pip install flake8
 
     - name: Setup flake8
-      uses: suo/flake8-github-action@releases/v1
+      uses: rbialon/flake8-annotations@v1
 
     - name: Lint with flake8
       run: |
