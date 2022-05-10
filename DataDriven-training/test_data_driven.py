@@ -63,7 +63,7 @@ class TestDataDriven:
         form_page.click_next()
 
         # スクリーンショットを保存
-        driver.save_screenshot()
+        driver.save_screenshot("./images/screenshot1.png")
 
         # 価格が168000円かどうかを確認
         confirm_page = confirm.ConfirmPageObject(self.driver)
