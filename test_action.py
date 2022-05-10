@@ -19,12 +19,12 @@ class TestHotelPlanisphere(object):
         driver = self.driver
         driver.get("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
 
-        ### 画面の読み込みが終わるまで待機
+        # 画面の読み込みが終わるまで待機
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.ID, "submit-button"))
         )
 
-        ## 当日日付以前を設定すると予約できないこと#
+        # 当日日付以前を設定すると予約できないこと#
         # 前日を確認する
         d_today = datetime.today()
         d_yesterday = d_today + timedelta(days=-1)
@@ -122,7 +122,7 @@ class TestHotelPlanisphere(object):
         textbox.clear()
         textbox.send_keys(d_threemonth.strftime("%Y/%m/%d"))
 
-        ## "宿泊数"に1を入力する
+        # "宿泊数"に1を入力する
         textbox = driver.find_element(By.ID, "term")
         textbox.clear()
         textbox.send_keys("1")
