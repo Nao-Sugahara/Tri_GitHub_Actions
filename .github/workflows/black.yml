@@ -1,5 +1,5 @@
 name: Formatter with black
-# Uses: https://github.com/marketplace/actions/black-check
+# Uses: https://black.readthedocs.io/en/stable/integrations/github_actions.html
 # Ref: https://black.readthedocs.io/en/stable/index.html
 
 on:
@@ -24,7 +24,7 @@ jobs:
           pip install black
 
       - name: Setup black_check
-        uses: jpetrucciani/black-check@master
+        uses: psf/black@stable
 
       - name: Formatter with black
         run: |
