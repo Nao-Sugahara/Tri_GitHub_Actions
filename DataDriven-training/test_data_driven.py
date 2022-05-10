@@ -19,22 +19,9 @@ class TestDataDriven:
         self.driver.get("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
 
     @pytest.mark.parametrize(
-        "case_no, date_from, days, headcount, breakfast, early_checkin, sightseeing, username, contact, total",
-        datalist,
-    )
-    def test_reserve_multi(
-        self,
-        case_no,
-        date_from,
-        days,
-        headcount,
-        breakfast,
-        early_checkin,
-        sightseeing,
-        username,
-        contact,
-        total,
-    ):
+        "case_no, date_from, days, headcount, breakfast, early_checkin, sightseeing, username, contact, total",datalist,)
+    
+    def test_reserve_multi(self,case_no,date_from,days,headcount,breakfast,early_checkin,sightseeing,username,contact,total,):
         driver = self.driver
 
         # 待機する
