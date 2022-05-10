@@ -29,7 +29,7 @@ class TestHotelPlanisphere(object):
         d_today = datetime.today()
         d_yesterday = d_today + timedelta(days=-1)
 
-        ## 日付を入力する
+        # 日付を入力する
         textbox = driver.find_element(By.ID, "date")
         textbox.clear()
         textbox.send_keys(d_yesterday.strftime("%Y/%m/%d"))
