@@ -40,7 +40,7 @@ class TestHotelPlanisphere(object):
         textbox.send_keys("1")
 
         # "人数"に1を入力する
-        textbox = driver.find_element(By.ID, "head-count")
+        textbox = driver.find_element(By.ID  "head-count")
         textbox.clear()
         textbox.send_keys("1")
 
