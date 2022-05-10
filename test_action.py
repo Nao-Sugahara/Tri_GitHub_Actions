@@ -19,7 +19,7 @@ class TestHotelPlanisphere(object):
         driver = self.driver
         driver.get("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
 
-        # 画面の読み込みが終わるまで待機
+        ### 画面の読み込みが終わるまで待機
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.ID, "submit-button"))
         )
