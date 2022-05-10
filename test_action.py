@@ -24,7 +24,7 @@ class TestHotelPlanisphere(object):
             EC.element_to_be_clickable((By.ID, "submit-button"))
         )
 
-        ## 当日日付以前を設定すると予約できないこと
+        ## 当日日付以前を設定すると予約できないこと#
         # 前日を確認する
         d_today = datetime.today()
         d_yesterday = d_today + timedelta(days=-1)
