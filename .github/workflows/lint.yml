@@ -4,6 +4,10 @@ name: Lint with Flake8
 
 on:
   pull_request:
+    types: 
+      - opened
+      - edited
+      - synchronize
     paths:
       - '**.py'
 
