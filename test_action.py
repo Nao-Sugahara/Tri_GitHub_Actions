@@ -10,9 +10,7 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 
 class TestHotelPlanisphere(object):
     def setup_method(self):
-        self.driver = webdriver.Chrome(
-            "C:Users/veriuser/Desktop/Selenium_Lesson/chromedriver.exe"
-        )
+        self.driver = webdriver.Chrome("./driver/chromedriver.exe")
         self.driver.maximize_window()
 
     def test_change_all_params(self):
@@ -24,7 +22,7 @@ class TestHotelPlanisphere(object):
             EC.element_to_be_clickable((By.ID, "submit-button"))
         )
 
-        # 当日日付以前を設定すると予約できないこと#
+        # 当日日付以前を設定すると予約できないこと
         # 前日を確認する
         d_today = datetime.today()
         d_yesterday = d_today + timedelta(days=-1)
@@ -60,7 +58,7 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "submit-button").click()
 
         # スクリーンショット取得（1）
-        driver.save_screenshot(".\\ScreenShot\\01_test_date_check.png")
+        driver.save_screenshot("./ScreenShot/01_test_date_check.png")
 
         # 期待値チェック
         assert (
@@ -104,7 +102,7 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "submit-button").click()
 
         # スクリーンショット取得（2）
-        driver.save_screenshot(".\\ScreenShot\\02_noname.png")
+        driver.save_screenshot("./ScreenShot/02_noname.png")
 
         # 確認
         assert (
@@ -148,7 +146,7 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "submit-button").click()
 
         # スクリーンショット取得（3）
-        driver.save_screenshot(".\\ScreenShot\\03_test_three_month_later.png")
+        driver.save_screenshot("./ScreenShot/03_test_three_month_later.png")
 
         # 確認
         assert (
