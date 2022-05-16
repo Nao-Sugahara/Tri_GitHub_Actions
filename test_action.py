@@ -61,7 +61,7 @@ class TestHotelPlanisphere(object):
         driver.save_screenshot("./ScreenShot/01_test_date_check.png")
 
         # 期待値チェック
-        assert (driver.find_element(By.CSS_SELECTOR,"#date ~ div").text=="翌日以降の日付を入力してください。"),"当日以前の日付を設定することができないこと"
+        assert (driver.find_element(By.CSS_SELECTOR "#date ~ div").text=="翌日以降の日付を入力してください。"),"当日以前の日付を設定することができないこと"
 
         # 名前が空の状態では予約できないこと
         # 前日を確認する
