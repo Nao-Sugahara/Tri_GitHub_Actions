@@ -46,7 +46,7 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "sightseeing").click()
 
         # "指名"に名前を入力する
-        textbox = driver.find_element(By.ID, "username")
+        textbox = driver.find_element(By.ID "username")
         textbox.clear()
         textbox.send_keys("ベリ一郎")
 
@@ -105,7 +105,7 @@ class TestHotelPlanisphere(object):
         assert (
             driver.find_element(By.CSS_SELECTOR, "#username ~ div").text
             == "このフィールドを入力してください。"
-        ) "名前が空欄では予約ができないこと"
+        ), "名前が空欄では予約ができないこと"
 
         # 3か月以上先の日付では予約できないこと
         # 前日を確認する
