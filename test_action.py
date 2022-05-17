@@ -146,10 +146,7 @@ class TestHotelPlanisphere(object):
         driver.save_screenshot("./ScreenShot/03_test_three_month_later.png")
 
         # 確認
-        assert (
-            driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
-            == "3ヶ月以内の日付を入力してください。"
-        ), "3か月以上先の日程では予約ができないこと"
+        assert ( driver.find_element(By.CSS_SELECTOR, "#date ~ div").text== "3ヶ月以内の日付を入力してください。"), "3か月以上先の日程では予約ができないこと"
 
     def teardown_method(self):
         self.driver.quit()
