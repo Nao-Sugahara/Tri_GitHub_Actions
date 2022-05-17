@@ -46,7 +46,7 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "sightseeing").click()
 
         # "指名"に名前を入力する
-        textbox = driver.find_element(By.ID, "username")
+        textbox = driver.find_element(By.ID "username")
         textbox.clear()
         textbox.send_keys("ベリ一郎")
 
