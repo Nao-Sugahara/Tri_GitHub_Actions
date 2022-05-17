@@ -105,7 +105,7 @@ class TestHotelPlanisphere(object):
         assert (
             driver.find_element(By.CSS_SELECTOR, "#username ~ div").text
             == "このフィールドを入力してください。"
-        ), "名前が空欄では予約ができないこと"
+        ) "名前が空欄では予約ができないこと"
 
         # 3か月以上先の日付では予約できないこと
         # 前日を確認する
