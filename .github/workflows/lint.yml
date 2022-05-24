@@ -44,9 +44,9 @@ jobs:
           exit 1
         fi
 
-      - name: Setup black_check
-        uses: psf/black@stable
+    - name: Setup black_check
+      uses: psf/black@stable
 
-      - name: Formatter with black
-        run: |
-          black . --line-length=100 --diff
+    - name: Formatter with black
+      run: |
+        black . --line-length=100 --diff
