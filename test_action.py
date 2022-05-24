@@ -34,7 +34,6 @@ class TestHotelPlanisphere(object):
 
         # "宿泊数"に1を入力する
         textbox = driver.find_element(By.ID, "term")
-        take;uaikk
         textbox.clear()
         textbox.send_keys("1")
 
