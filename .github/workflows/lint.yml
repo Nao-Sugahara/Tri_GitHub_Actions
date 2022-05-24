@@ -33,15 +33,10 @@ jobs:
     - name: Setup GitHub annotations
       uses: rbialon/flake8-annotations@v1
       
-    - name: Setup black_check
-      uses: psf/black@stable
-
     - name: Lint
       run: |
         FLAKE8_OUT=$(flake8 . --count --select=E9,F63,F7,F82 --show-source --max-complexity=10 --max-line-length=100 --statistics)
         echo "$FLAKE8_OUT"
-        
-        black . --line-length=100 --diff
         
         FLAKE8_ERRORS=$(echo "$FLAKE8_OUT" | grep -P '^.+:\d+:\d+:\s*E' || true)
         if [ -n "$FLAKE8_ERRORS" ]; then
@@ -49,4 +44,8 @@ jobs:
           exit 1
         fi
         
+    - name: Setup black_check
+      uses: psf/black@stable
 
+    - name: Formatter
+      uses: black . --line-length=100 --diff
