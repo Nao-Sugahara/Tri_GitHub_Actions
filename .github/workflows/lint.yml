@@ -43,6 +43,7 @@ jobs:
           echo "::error::!!flake8 errors detected!!"
           exit 1
         fi
+
     - name: Lint with black
       uses: psf/black@stable
       run: |
