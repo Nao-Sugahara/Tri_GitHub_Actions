@@ -46,9 +46,9 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "sightseeing").click()
 
         # "指名"に名前を入力する
-        textbox = driver.find_element(By.ID "username")
+        textbox = driver.find_element(By.ID, "username")
         textbox.clear()
-        textbox.send_keys("ベリ一郎")
+        textbox.send_keys("ベリ一")
 
         # "希望しない"を選択する
         dropdown = Select(driver.find_element(By.ID, "contact"))
@@ -62,9 +62,9 @@ class TestHotelPlanisphere(object):
 
         # 期待値チェック
         assert (
-            driver.find_element(By.CSS_SELECTOR "#date ~ div").text
+            driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
             == "翌日以降の日付を入力してください。"
-        ),"当日以前の日付を設定することができないこと"
+        ), "当日以前の日付を設定することができないこと"
 
         # 名前が空の状態では予約できないこと
         # 前日を確認する
@@ -149,7 +149,10 @@ class TestHotelPlanisphere(object):
         driver.save_screenshot("./ScreenShot/03_test_three_month_later.png")
 
         # 確認
-        assert ( driver.find_element(By.CSS_SELECTOR, "#date ~ div").text== "3ヶ月以内の日付を入力してください。"), "3か月以上先の日程では予約ができないこと"
+        assert (
+            driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
+            == "3ヶ月以内の日付を入力してください。"
+        ), "3か月以上先の日程では予約ができないこと"
 
     def teardown_method(self):
         self.driver.quit()
