@@ -48,7 +48,7 @@ class TestHotelPlanisphere(object):
         # "指名"に名前を入力する
         textbox = driver.find_element(By.ID, "username")
         textbox.clear()
-        textbox.send_keys("テスト太郎")
+        textbox.send_keys("test1")
 
         # "希望しない"を選択する
         dropdown = Select(driver.find_element(By.ID, "contact"))
