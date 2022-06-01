@@ -46,7 +46,6 @@ jobs:
       
     - name: Setup black 
       uses: psf/black@stable
-
-    - name: Lint with black
-      run: |
-        black . --line-length=100 --diff
+      with:
+        options: "--check --line-length=100 --diff"
+        src: "."
