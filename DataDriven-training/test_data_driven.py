@@ -18,7 +18,6 @@ class TestDataDriven:
     def setup_method(self):
         self.driver.get("https://hotel.testplanisphere.dev/ja/reserve.html?plan-id=0")
 
-    # csv読み込み
     @pytest.mark.parametrize(
         "case_no,date_from,days,headcount,breakfast,early_checkin,sightseeing,username,contact,total",
         datalist,
