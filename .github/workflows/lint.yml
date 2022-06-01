@@ -26,7 +26,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8
         pip install black
-        pip install pre-commit
+      
+    - name: Setup black 
+      uses: psf/black@stable
+      with:
+        options: "--check --line-length=100 --diff"
+        src: "."
 
     - name: Setup flake8 annotations
       uses: rbialon/flake8-annotations@v1
@@ -41,9 +46,3 @@ jobs:
           echo "::error::!!flake8 errors detected!!"
           exit 1
         fi
-      
-    - name: Setup black 
-      uses: psf/black@stable
-      with:
-        options: "--check --line-length=100 --diff"
-        src: "."
