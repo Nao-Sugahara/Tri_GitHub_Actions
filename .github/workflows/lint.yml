@@ -30,7 +30,7 @@ jobs:
         pip install flake8
         pip install black
 
-  check:
+  code_check:
     runs-on: ubuntu-latest
     needs: build
     steps:
