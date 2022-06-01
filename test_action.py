@@ -102,7 +102,7 @@ class TestHotelPlanisphere(object):
         driver.find_element(By.ID, "submit-button").click()
 
         # スクリーンショット取得（2）
-        driver.save_screenshot("./ScreenShot/02_noname.png")
+        driver.save_screenshot("./ScreenShot/02no_name.png")
 
         # 確認
         assert (
