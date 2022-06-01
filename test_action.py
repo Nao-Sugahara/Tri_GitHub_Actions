@@ -101,7 +101,8 @@ class TestHotelPlanisphere(object):
         # 予約内容を確認するボタンをクリック
         driver.find_element(By.ID, "submit-button").click()
 
-        # スクリーンショット取得（2）
+        # スクリーンショット取得
+
         driver.save_screenshot("./ScreenShot/02no_name.png")
 
         # 確認
