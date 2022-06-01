@@ -36,9 +36,6 @@ jobs:
     steps:
     - name: Setup flake8 annotations
       uses: rbialon/flake8-annotations@v1
-      
-    - name: Setup black 
-      uses: psf/black@stable
 
     - name: Lint with Flake8
       run: |
@@ -50,6 +47,9 @@ jobs:
           echo "::error::!!flake8 errors detected!!"
           exit 1
         fi
+      
+    - name: Setup black 
+      uses: psf/black@stable
 
     - name: Lint with black
       run: |
