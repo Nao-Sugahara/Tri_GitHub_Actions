@@ -30,8 +30,15 @@ jobs:
         pip install flake8
         pip install black
 
-    - name: Setup GitHub annotations
+  check:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Setup flake8 annotations
       uses: rbialon/flake8-annotations@v1
+      
+    - name: Setup black 
+      uses: psf/black@stable
 
     - name: Lint with Flake8
       run: |
@@ -45,6 +52,5 @@ jobs:
         fi
 
     - name: Lint with black
-      uses: psf/black@stable
       run: |
         black . --line-length=100 --diff
