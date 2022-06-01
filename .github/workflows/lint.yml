@@ -47,3 +47,6 @@ jobs:
       with:
         options: "--check --line-length=100 --diff"
         src: "."
+    
+#    -name: Setup pre-commit
+#     uses: pre-commit
