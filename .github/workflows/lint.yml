@@ -30,7 +30,7 @@ jobs:
     - name: Setup black 
       uses: psf/black@stable
       with:
-        options: "--check --line-length=100 --diff"
+        options: "--line-length=100 --diff"
         src: "."
 
     - name: Setup flake8 annotations
