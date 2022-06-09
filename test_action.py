@@ -149,7 +149,7 @@ class TestHotelPlanisphere(object):
         # スクリーンショット取得（3）
         driver.save_screenshot("./ScreenShot/03_test_three_month_later.png")
 
-        ## 確認
+        # 確認
         assert (
             driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
             == "3ヶ月以内の日付を入力してください。"
