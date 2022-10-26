@@ -151,8 +151,8 @@ class TestHotelPlanisphere(object):
 
         # 確認
         assert (
-            driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
-            == "3ヶ月以内の日付を入力してください。"
+        driver.find_element(By.CSS_SELECTOR, "#date ~ div").text
+        == "3ヶ月以内の日付を入力してください。"
         ), "3か月以上先の日程では予約ができないこと"
 
     def teardown_method(self):
